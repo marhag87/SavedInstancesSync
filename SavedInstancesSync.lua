@@ -89,13 +89,13 @@ function SavedInstancesSync_SlashCommandHandler()
     end
 end
 
-function SavedInstancesSync_SendInstances()
+function SavedInstancesSync_SendInstances(sender)
     C_ChatInfo.SendAddonMessage(MSG_PREFIX, 'START', 'PARTY')
     for i=1,GetNumSavedInstances(),1 do
         local name,_,reset,difficulty,_,_,_,_,_,_,numEncounters,encounterProgress,_ = GetSavedInstanceInfo(i);
         if difficulty == 23 and reset > 0 then
             local payload = string.format("%s^%d^%d", name, encounterProgress, numEncounters)
-            C_ChatInfo.SendAddonMessage(MSG_PREFIX, payload, 'PARTY')
+            C_ChatInfo.SendAddonMessage(MSG_PREFIX, payload, 'WHISPER', sender)
         end
     end
     C_ChatInfo.SendAddonMessage(MSG_PREFIX, 'END', 'PARTY')
@@ -109,7 +109,7 @@ function SendRecieve(self, event, ...)
                 print("Received:", prefix, payload, type, sender)
             end
             if payload == 'SYNC_REQUESTED' then
-                SavedInstancesSync_SendInstances()
+                SavedInstancesSync_SendInstances(sender)
             elseif payload == 'START' then
                 for i=#group_members, 1, -1 do
                     if group_members[i] == sender then

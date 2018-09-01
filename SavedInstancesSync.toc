@@ -1,5 +1,5 @@
 ## Interface: 80000
-## Version: 0.1.0
+## Version: 0.1.1
 ## Title: Saved Instances Sync
 ## Notes: Figure out which Mythic dungeons your party can run
 ## Author: Martin Hagstrom
