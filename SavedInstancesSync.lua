@@ -1,25 +1,21 @@
 local MSG_PREFIX = 'SIS'
-local motherlode = 'The MOTHERLODE!!'
-local freehold = 'Freehold'
-local ataldazar = "Atal'Dazar"
-local toldagor = 'Tol Dagor'
-local underrot = 'The Underrot'
-local manor = 'Waycrest Manor'
-local temple = 'Temple of Sethraliss'
-local kingsrest = "Kings' Rest"
-local shrine = 'Shrine of the Storm'
-local siege = 'Siege of Boralus'
+local pain = 'Theater of Pain'
+local spires = 'Spires of Ascension'
+local otherside = 'De Other Side'
+local depths = 'Sanguine Depths'
+local wake = 'The Necrotic Wake'
+local plaguefall = 'Plaguefall'
+local mists = 'Mists of Tirna Scithe'
+local atonement = 'Halls of Atonement'
 local Instances = {
-  [motherlode] = {},
-  [freehold] = {},
-  [ataldazar] = {},
-  [toldagor] = {},
-  [underrot] = {},
-  [manor] = {},
-  [temple] = {},
-  [kingsrest] = {},
-  [shrine] = {},
-  [siege] = {},
+  [pain] = {},
+  [spires] = {},
+  [otherside] = {},
+  [depths] = {},
+  [wake] = {},
+  [plaguefall] = {},
+  [mists] = {},
+  [atonement] = {},
 }
 local group_members = {}
 local print_done = false
@@ -56,16 +52,14 @@ end
 
 function SavedInstancesSync_SlashCommandHandler()
     Instances = {
-      [motherlode] = {},
-      [freehold] = {},
-      [ataldazar] = {},
-      [toldagor] = {},
-      [underrot] = {},
-      [manor] = {},
-      [temple] = {},
-      [kingsrest] = {},
-      [shrine] = {},
-      [siege] = {},
+      [pain] = {},
+      [spires] = {},
+      [otherside] = {},
+      [depths] = {},
+      [wake] = {},
+      [plaguefall] = {},
+      [mists] = {},
+      [atonement] = {},
     }
     print_done = false
     if IsInGroup() then
